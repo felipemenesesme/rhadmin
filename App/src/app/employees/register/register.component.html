@@ -1,0 +1,365 @@
+<div class="panel-header panel-header-sm"></div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Cadastrar</h5>
+          <p class="category">Colaboradores</p>
+        </div>
+        <div class="card-body all-icons">
+          <form method="post" #frm="ngForm" (ngSubmit)="register(frm)">
+            <div class="row">
+              <div class="col-sm-6 col-lg-6">
+                <div class="form-group">
+                  <label for="nome">Nome</label>
+                  <input
+                    type="text"
+                    value=""
+                    id="nome"
+                    name="nome"
+                    placeholder="Nome"
+                    class="form-control"
+                    [(ngModel)]="employee.nome"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-3 datepicker-container">
+                <div class="form-group">
+                  <label for="dataDeNascimento">Data de nascimento</label>
+                  <input
+                    class="form-control datetimepicker"
+                    placeholder="Data de nascimento"
+                    name="dp"
+                    id="dataDeNascimento"
+                    name="dataDeNascimento"
+                    ngbDatepicker
+                    #d="ngbDatepicker"
+                    (click)="d.toggle()"
+                    [(ngModel)]="employee.dataDeNascimento"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-3">
+                <div class="form-group">
+                  <label for="rg">RG</label>
+                  <input
+                    type="number"
+                    value=""
+                    id="rg"
+                    placeholder="RG"
+                    name="rg"
+                    class="form-control"
+                    [(ngModel)]="employee.rg"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-2">
+                <div class="form-group">
+                  <label for="cpf">CPF</label>
+                  <input
+                    type="number"
+                    value=""
+                    id="cpf"
+                    name="cpf"
+                    placeholder="CPF"
+                    class="form-control"
+                    [(ngModel)]="employee.cpf"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="mae">Mãe</label>
+                  <input
+                    type="text"
+                    value=""
+                    id="mae"
+                    name="mae"
+                    placeholder="Mãe"
+                    class="form-control"
+                    [(ngModel)]="employee.mae"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-5">
+                <div class="form-group">
+                  <label for="pai">Pai</label>
+                  <input
+                    type="text"
+                    value=""
+                    id="pai"
+                    name="pai"
+                    placeholder="Pai"
+                    class="form-control"
+                    [(ngModel)]="employee.pai"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-2">
+                <div class="form-group">
+                  <label for="estadoCivil">Estado civil</label>
+                  <select
+                    class="form-control"
+                    id="estadoCivil"
+                    name="estadoCivil"
+                    [(ngModel)]="employee.estadoCivil"
+                    required
+                  >
+                    <option>Solteiro(a)</option>
+                    <option>Casado(a)</option>
+                    <option>Separado(a)</option>
+                    <option>Divorciado(a)</option>
+                    <option>Viúvo(a)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-3">
+                <div class="form-group">
+                  <label for="grauDeInstrucao">Grau de Instrução</label>
+                  <select
+                    class="form-control"
+                    id="grauDeInstrucao"
+                    name="grauDeInstrucao"
+                    [(ngModel)]="employee.grauDeInstrucao"
+                    required
+                  >
+                    <option>Ensino médio completo</option>
+                    <option>Superior incompleto</option>
+                    <option>Superior completo</option>
+                    <option>Pós-Graduação/Especialização</option>
+                    <option>Mestrado</option>
+                    <option>Doutorado</option>
+                    <option>Pós-Doutorado</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-3">
+                <div class="form-group">
+                  <label for="telefone">Telefone</label>
+                  <input
+                    type="number"
+                    value=""
+                    id="telefone"
+                    name="telefone"
+                    placeholder="Telefone"
+                    class="form-control"
+                    [(ngModel)]="employee.telefone"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-4">
+                <div class="form-group">
+                  <label for="endereco">Endereço</label>
+                  <input
+                    type="text"
+                    value=""
+                    id="endereco"
+                    name="endereco"
+                    placeholder="Endereço"
+                    class="form-control"
+                    [(ngModel)]="employee.endereco"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-2">
+                <div class="form-group">
+                  <label for="cep">CEP</label>
+                  <input
+                    type="number"
+                    value=""
+                    id="cep"
+                    name="cep"
+                    placeholder="CEP"
+                    class="form-control"
+                    [(ngModel)]="employee.cep"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-3">
+                <div class="form-group">
+                  <label for="bairro">Bairro</label>
+                  <input
+                    type="text"
+                    value=""
+                    id="bairro"
+                    name="bairro"
+                    placeholder="Bairro"
+                    class="form-control"
+                    [(ngModel)]="employee.bairro"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-4">
+                <div class="form-group">
+                  <label for="cidade">Cidade</label>
+                  <input
+                    type="text"
+                    value=""
+                    id="cidade"
+                    name="cidade"
+                    placeholder="Cidade"
+                    class="form-control"
+                    [(ngModel)]="employee.cidade"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-1">
+                <div class="form-group">
+                  <label for="uf">UF</label>
+                  <input
+                    type="text"
+                    value=""
+                    id="uf"
+                    name="uf"
+                    placeholder="UF"
+                    class="form-control"
+                    [(ngModel)]="employee.uf"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-2">
+                <div class="form-group">
+                  <label for="pis">PIS</label>
+                  <input
+                    type="number"
+                    value=""
+                    id="pis"
+                    name="pis"
+                    placeholder="PIS"
+                    class="form-control"
+                    [(ngModel)]="employee.pis"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-3 datepicker-container">
+                <div class="form-group">
+                  <label for="dataAdmissao">Data de admissão</label>
+                  <input
+                    class="form-control datetimepicker"
+                    placeholder="Data de admissão"
+                    name="dp"
+                    id="dataAdmissao"
+                    name="dataAdmissao"
+                    ngbDatepicker
+                    #d2="ngbDatepicker"
+                    (click)="d2.toggle()"
+                    [(ngModel)]="employee.dataAdmissao"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-3">
+                <div class="form-group">
+                  <label for="funcao">Função</label>
+                  <input
+                    type="text"
+                    value=""
+                    id="funcao"
+                    name="funcao"
+                    placeholder="Função"
+                    class="form-control"
+                    [(ngModel)]="employee.funcao"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-4">
+                <div class="form-group">
+                  <label for="departamento">Departamento</label>
+                  <input
+                    type="text"
+                    value=""
+                    id="departamento"
+                    name="departamento"
+                    placeholder="Departamento"
+                    class="form-control"
+                    [(ngModel)]="employee.departamento"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-2">
+                <div class="form-group">
+                  <label for="custoDiario">Custo diário</label>
+                  <input
+                    type="text"
+                    value=""
+                    id="custoDiario"
+                    name="custoDiario"
+                    placeholder="Custo diário"
+                    class="form-control"
+                    [(ngModel)]="employee.custoDiario"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-3">
+                <div class="form-group">
+                  <label for="escalaDeTrabalho">Escala de Trabalho</label>
+                  <select
+                    class="form-control"
+                    id="escalaDeTrabalho"
+                    name="escalaDeTrabalho"
+                    [(ngModel)]="employee.escalaDeTrabalho"
+                    required
+                  >
+                    <option>5x2</option>
+                    <option>6x1</option>
+                    <option>6x2</option>
+                    <option>12x36</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-12 d-flex flex-row-reverse">
+                <button
+                  type="submit"
+                  class="btn btn-success btn-round"
+                  [disabled]="frm.invalid"
+                >
+                  Cadastrar
+                </button>
+                <button type="button" class="btn btn-danger btn-round">
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

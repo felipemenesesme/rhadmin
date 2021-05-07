@@ -1,0 +1,108 @@
+<div class="panel-header panel-header-sm"></div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-6 col-lg-4">
+              <h5 class="title">Colaboradores</h5>
+              <p class="category">Colaboradores</p>
+            </div>
+            <div class="col-sm-6 col-lg-8 d-flex flex-row-reverse">
+              <a
+                routerLink="/employees/register"
+                type="button"
+                class="btn btn-success btn-round"
+                >Cadastrar Colaborador</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="card-body all-icons">
+          <div class="row">
+            <div class="col-sm-6" *ngIf="selectedEmployee">
+              <div class="row">
+                <div class="m-auto">
+                  <h4>{{selectedEmployee.nome}}</h4>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <p>Função: {{selectedEmployee.funcao}}</p>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <p>Departamento: {{selectedEmployee.departamento}}</p>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <p>Escala: {{selectedEmployee.escalaDeTrabalho}}</p>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <p>Custo diário: {{selectedEmployee.custoDiario}}</p>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <p>Custo mensal: {{employeeMonthlyCost}}</p>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <p>Custo anual: {{employeeYearlyCost}}</p>
+                  </div>
+                </div>
+                <div class="mt-1">
+                  <button class="btn btn-sm btn-outline-danger" (click)="voltar()">
+                    Fechar
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              [ngClass]="{
+                'col-sm-6': selectedEmployee,
+                'col-sm-12': !selectedEmployee
+              }"
+            >
+              <table class="table table-hover">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Visualizar</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome Completo</th>
+                    <th scope="col">telefone</th>
+                    <th scope="col">Opções</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let employee of employees">
+                    <td>
+                      <button
+                        (click)="employeeSelect(employee.id)"
+                        class="text-dark btn btn-sm btn-outline-warning"
+                      >
+                        Detalhe
+                      </button>
+                    </td>
+                    <td scope="row">{{ employee.id }}</td>
+                    <td>{{ employee.nome }}</td>
+                    <td>{{ employee.telefone }}</td>
+                    <td>
+                      <div class="btn-group">
+                        <button
+                          class="btn btn-sm"
+                          [ngClass]="{
+                            'btn-outline-danger': employee.ativo,
+                            'btn-success': !employee.ativo
+                          }"
+                          (click)="changeState(employee)"
+                        >
+                          {{ employee.ativo ? "Desativar" : "Ativar" }}
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
