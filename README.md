@@ -32,4 +32,4 @@ alterar a string de conexão dentro de `Api/appsettings.json` em `ConnectionStri
     $ ng serve
 ```
 
-Open http://localhost:4200/ with your browser to see the result.
+Abra http://localhost:4200/ com seu navegador para ver o resultado.
