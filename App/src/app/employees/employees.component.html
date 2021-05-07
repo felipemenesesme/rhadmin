@@ -24,30 +24,33 @@
             <div class="col-sm-6" *ngIf="selectedEmployee">
               <div class="row">
                 <div class="m-auto">
-                  <h4>{{selectedEmployee.nome}}</h4>
+                  <h4>{{ selectedEmployee.nome }}</h4>
                 </div>
-                <div class="row">
+                <div class="row" style="padding: 10px">
                   <div class="col-sm-12 col-md-6">
-                    <p>Função: {{selectedEmployee.funcao}}</p>
+                    <p>Função: {{ selectedEmployee.funcao }}</p>
                   </div>
                   <div class="col-sm-12 col-md-6">
-                    <p>Departamento: {{selectedEmployee.departamento}}</p>
+                    <p>Departamento: {{ selectedEmployee.departamento }}</p>
                   </div>
                   <div class="col-sm-12 col-md-6">
-                    <p>Escala: {{selectedEmployee.escalaDeTrabalho}}</p>
+                    <p>Escala: {{ selectedEmployee.escalaDeTrabalho }}</p>
                   </div>
                   <div class="col-sm-12 col-md-6">
-                    <p>Custo diário: {{selectedEmployee.custoDiario}}</p>
+                    <p>Custo diário: {{ selectedEmployee.custoDiario }}</p>
                   </div>
                   <div class="col-sm-12 col-md-6">
-                    <p>Custo mensal: {{employeeMonthlyCost}}</p>
+                    <p>Custo mensal: {{ employeeMonthlyCost }}</p>
                   </div>
                   <div class="col-sm-12 col-md-6">
-                    <p>Custo anual: {{employeeYearlyCost}}</p>
+                    <p>Custo anual: {{ employeeYearlyCost }}</p>
                   </div>
                 </div>
                 <div class="mt-1">
-                  <button class="btn btn-sm btn-outline-danger" (click)="voltar()">
+                  <button
+                    class="btn btn-sm btn-outline-danger"
+                    (click)="voltar()"
+                  >
                     Fechar
                   </button>
                 </div>
